@@ -14,7 +14,16 @@ Unhandled exception. Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite 
    at Jun9sqlitedotnet.Program.Main(String[] args) in /Volumes/esgaroth/source/repos/Jun9sqlitedotnet/Program.cs:line 24
 ```
 
-1. Open the hello.db using the [Jade editor](https://rhildred.github.io) and create the user table with a row. 
+1. Open the hello.db using the [Jade editor](https://rhildred.github.io) and create the user table with a row to satisfy this sql:
+```
+       command.CommandText =
+                @"
+        SELECT name
+        FROM user
+        WHERE id = $id
+    ";
+
+```
 2. Save the hello.db from Jade into your Downloads folder. 
 3. Move it over top of the hello.db that you copied in step 1.
 4. `dotnet run` and you should see something like:
